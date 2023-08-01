@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hanken+Grotesk:wght@200;300;400;500;600;700&family=Poppins:wght@500;600&family=Rubik:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="steps">
+        <div class="step">
+          <div class="index active">1</div>
+          <div class="step-info">
+            <p class="step-desc">Step 1</p>
+            <h3 for="step-1">Your info</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index">2</div>
+          <div class="step-info">
+            <p class="step-desc">Step 2</p>
+            <h3 for="step-2">Select plan</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index">3</div>
+          <div class="step-info">
+            <p class="step-desc">Step 3</p>
+            <h3 for="step-3">Add-ons</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index">4</div>
+          <div class="step-info">
+            <p class="step-desc">Step 4</p>
+            <h3 for="step-4">Summary</h3>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-step step--one-info evenly">
+          <!-- Step 1 start -->
+          <div>
+            <h2 class="info-title">Personal info</h2>
+            <p class="info-desc">
+              Please provide your name, email address, and phone number.
+            </p>
+          </div>
+          <div class="name">
+            <h3 class="input-title">Name</h3>
+            <input
+              required
+              type="text"
+              name="title"
+              placeholder="e.g. Stephen King"
+            />
+          </div>
+          <div class="email">
+            <h3 class="input-title">Email Address</h3>
+            <input
+              required
+              type="email"
+              name="title"
+              placeholder="e.g. Stephenking@lorem.com"
+            />
+          </div>
+          <div class="number">
+            <h3 class="input-title">Phone Number</h3>
+            <input
+              required
+              type="number"
+              name="title"
+              placeholder=" e.g. +1 234 567 890"
+            />
+          </div>
+          <div class="buttons">
+            <button class="next">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+        <div class="info-step step--two-info evenly">
+          <div>
+            <h2 class="info-title">Select your plan</h2>
+            <p class="info-desc">
+              You have the option of monthly or yearly billing.
+            </p>
+          </div>
+          <div class="plans">
+            <div class="plan">
+              <input type="radio" id="arcade" name="plan" checked /><label
+                for="arcade"
+                tabindex="0"
+                ><img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                <div class="details">
+                  <h4>Arcade</h4>
+                  <p>$<span class="final-price">9</span>/mo</p>
+                </div></label
+              >
+            </div>
+            <div class="plan">
+              <input type="radio" id="advanced" name="plan" /><label
+                for="advanced"
+                tabindex="0"
+                ><img src="./assets/images/icon-advanced.svg" alt="advanced" />
+                <div class="details">
+                  <h4>Advanced</h4>
+                  <p>$<span class="final-price">12</span>/mo</p>
+                </div></label
+              >
+            </div>
+            <div class="plan">
+              <input type="radio" id="pro" name="plan" /><label
+                for="pro"
+                tabindex="0"
+                ><img src="./assets/images/icon-pro.svg" alt="pro" />
+                <div class="details">
+                  <h4>Pro</h4>
+                  <p>$<span class="final-price">15</span>/mo</p>
+                </div></label
+              >
+            </div>
+          </div>
+
+          <div class="type">
+            <h5 class="monthly active">Monthly</h5>
+            <label for="plan"></label>
+            <h5 class="yearly">Yearly</h5>
+          </div>
+          <div class="buttons flex-between">
+            <button class="back">Go Back</button>
+            <button class="next">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+        <div class="info-step step--three-info evenly">
+          <div>
+            <h2 class="info-title">Pick add-ons</h2>
+            <p class="info-desc">
+              Add-ons help enhance your gaming experience.
+            </p>
+          </div>
+
+          <div class="addons">
+            <label class="addon active flex-between">
+              <input type="checkbox" checked />
+              <div>
+                <h3 class="addon-title">Online service</h3>
+                <p class="addon-desc">Access to multiplayer games</p>
+              </div>
+              <span class="price">+$<span class="final-price">1</span>/mo</span>
+            </label>
+
+            <label class="addon active flex-between" for="addon-two">
+              <input type="checkbox" id="addon-two" checked />
+              <div>
+                <h3 class="addon-title">Larger storage</h3>
+                <p class="addon-desc">Extra 1TB of cloud save</p>
+              </div>
+              <span class="price">+$<span class="final-price">2</span>/mo</span>
+            </label>
+
+            <label class="addon flex-between">
+              <input type="checkbox" />
+              <div>
+                <h3 class="addon-title">Customizable Profile</h3>
+                <p class="addon-desc">Custom theme on your profile</p>
+              </div>
+              <span class="price">+$<span class="final-price">2</span>/mo</span>
+            </label>
+          </div>
+
+          <div class="btn buttons flex-between">
+            <button class="back">Go Back</button>
+            <button class="next">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <div class="info-step step--four-info evenly">
+          <div>
+            <h2 class="info-title">Finishing up</h2>
+            <p class="info-desc">
+              Double-check everything looks OK before confirming.
+            </p>
+          </div>
+
+          <!-- Dynamically add subscription and add-on selections here -->
+          <div class="summary">
+            <div class="service flex-between">
+              <div>
+                <h3>Arcade <span></span></h3>
+                <a>Change</a>
+              </div>
+              <span class="plan-price">$<span>9</span>/mo</span>
+            </div>
+            <div class="service-addons">
+              <div class="bonus flex-between">
+                <h5>Online service</h5>
+                <span class="addon-price"
+                  >+$<span class="final-price">1</span>/mo</span
+                >
+              </div>
+              <div class="bonus flex-between">
+                <h5>Larger storage</h5>
+                <span class="addon-price"
+                  >+$<span class="final-price">2</span>/mo</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="total flex-between">
+            <span class="total-title">Total (per month)</span>
+          </div>
+          <div class="buttons flex-between">
+            <button class="back">Go Back</button>
+            <button class="next confirm">Confirm</button>
+          </div>
+        </div>
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <div class="info-step step--five-info flex-between">
+          <img src="./assets/images/icon-thank-you.svg" alt="Thank You!" />
+          <h2 class="info-title">Thank you!</h2>
+          <p class="info-desc">
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
+        <!-- Step 5 end -->
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

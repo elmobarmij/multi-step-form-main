@@ -1,0 +1,554 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--neutral-200);
+  min-height: 100vh;
+}
+
+:root {
+  --primary-800: hsl(213, 96%, 18%);
+  --primary-400: hsl(243, 100%, 62%);
+  --primary-300: hsl(228, 100%, 84%);
+  --primary-200: hsl(206, 94%, 87%);
+  --secondary-400: hsl(354, 84%, 57%);
+  --neutral-400: hsl(231, 11%, 63%);
+  --neutral-300: hsl(229, 24%, 87%);
+  --neutral-200: hsl(214.29deg 63.64% 95.69%);
+  --neutral-100: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+  --hover: hsl(213deg 32.34% 37.6%);
+  --primary-light: hsl(213deg 96% 18% / 63%);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.evenly {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.container {
+  display: grid;
+  grid-template-columns: 270px 2fr;
+  padding: 15px;
+  min-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 12px;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px 0px var(--neutral-300);
+  overflow: hidden;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 30px;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-size: cover;
+  background-position: bottom;
+  min-height: 550px;
+  border-radius: 12px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: initial;
+}
+.index {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--white);
+  font-weight: 500;
+  border: 1px solid var(--white);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  background-color: transparent;
+}
+.index.active {
+  color: #000;
+  border: none;
+  background-color: var(--primary-200);
+}
+.step-desc {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-bottom: 2px;
+  letter-spacing: -0.7px;
+  color: var(--neutral-300);
+}
+.step-info h3 {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.info {
+  display: flex;
+  justify-content: center;
+}
+.step--one-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info-title {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.info-desc {
+  line-height: 1.5;
+  font-size: 16px;
+  color: var(--neutral-400);
+}
+.input-title {
+  font-size: 15px;
+  color: var(--primary-light);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.info input {
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.6;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  outline: none;
+  transition: 0.4s;
+  border: 1px solid var(--neutral-400);
+}
+.info input:hover,
+.info input:active {
+  outline: 1px solid var(--neutral-400);
+}
+.name,
+.number,
+.email {
+  position: relative;
+}
+
+.name.invalid input,
+.email.invalid input,
+.number.invalid input {
+  border: 1px solid var(--secondary-400);
+  outline: none;
+}
+.email.incorrect::after {
+  content: "You Have entered an invalid email adresse!";
+}
+.name.invalid::before,
+.email.invalid::before,
+.number.invalid::before {
+  content: "This Field Is Required";
+  position: absolute;
+  color: var(--secondary-400);
+  height: 20px;
+  right: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.step--one-info .next,
+.step--two-info .next,
+.step--three-info .next,
+.step--four-info .next {
+  display: flex;
+  margin: 50px 0 0 auto;
+  padding: 12px 24px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--primary-800);
+  font-family: inherit;
+  transition: 0.3s ease-in-out;
+  user-select: none;
+}
+.step--two-info .next,
+.step--three-info .next,
+.step--four-info .next {
+  margin: unset;
+}
+.next:hover,
+.next:active {
+  background-color: var(--hover);
+}
+.plans {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.plans .plan {
+  display: flex;
+  min-height: 170px;
+}
+.plans .plan label {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--neutral-300);
+  cursor: pointer;
+  min-width: 130px;
+  transition: all 0.2s ease-in-out;
+}
+
+.plans .plan label > img {
+  height: 40px;
+  width: 40px;
+}
+.plans .plan label:hover,
+.plans .plan label:focus {
+  border-color: var(--primary-400);
+  outline: none;
+}
+.plans .plan input[type="radio"] {
+  display: none;
+}
+.plans .plan input[type="radio"]:checked ~ label {
+  background-color: var(--neutral-200);
+  border-color: var(--primary-400);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.details h4 {
+  color: var(--primary-light);
+  margin-bottom: 2px;
+}
+.details p {
+  color: var(--neutral-400);
+  font-size: 14px;
+}
+.type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--neutral-200);
+  border-radius: 10px;
+  width: 100%;
+}
+.type label {
+  width: 40px;
+  height: 20px;
+  border-radius: 12px;
+  padding: 3px;
+  margin: 0 20px;
+  background-color: var(--primary-800);
+  position: relative;
+  cursor: pointer;
+}
+.type label::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+.type h5 {
+  color: var(--neutral-400);
+  font-size: 14px;
+}
+.type h5.active {
+  color: var(--primary-800);
+}
+.back {
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--neutral-400);
+  font-size: 14px;
+  transition: 0.4s;
+  cursor: pointer;
+  user-select: none;
+}
+.back:hover,
+.back:active {
+  color: var(--primary-800);
+}
+.step--one-info .buttons,
+.step--two-info .buttons {
+  width: 100%;
+}
+.step--three-info {
+  flex-direction: column;
+  transform: translateX(-30px);
+}
+.addons {
+  flex-direction: column;
+  display: flex;
+  gap: 15px;
+}
+.addon {
+  width: 120%;
+  padding: 22px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  justify-content: flex-start;
+  border: 1px solid #c6c6c6;
+  transition: 0.4s;
+}
+.addon.active {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--primary-400);
+}
+.addon:hover {
+  border: 1px solid var(--primary-400);
+}
+.addon input {
+  accent-color: var(--primary-400);
+  width: 17px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.addon input:checked ~ label {
+  background-color: var(--primary-400);
+}
+.addon input:hover,
+.addon input:checked {
+  outline: none;
+  cursor: pointer;
+}
+.addon h3 {
+  font-size: initial;
+  font-weight: 600;
+  color: var(--primary-800);
+}
+.addon p {
+  color: var(--neutral-400);
+  font-size: 14px;
+  margin-top: 5px;
+}
+.price {
+  color: var(--primary-400);
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: auto;
+}
+.addon .buttons .next {
+  margin-left: auto;
+}
+.buttons {
+  width: 120%;
+}
+.step--four-info .buttons {
+  width: 100%;
+}
+.confirm {
+  font-weight: 500;
+  background-color: var(--primary-400);
+}
+.confirm:hover {
+  background-color: var(--primary-light);
+}
+.total,
+.bonus h5,
+.summary a {
+  color: var(--neutral-400);
+}
+.summary a {
+  transition: 0.3s;
+  font-weight: 500;
+  cursor: pointer;
+}
+.summary a:hover {
+  color: var(--primary-400);
+}
+.total-price {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--primary-400);
+}
+.summary {
+  padding: 20px;
+  background-color: var(--neutral-100);
+  border-radius: 12px;
+}
+.summary h3 {
+  font-size: initial;
+  color: var(--primary-800);
+  margin-bottom: 5px;
+}
+.bonus {
+  padding-top: 20px;
+}
+.bonus h5 {
+  font-weight: 400;
+}
+hr {
+  border: 1px solid var(--neutral-200);
+}
+.service {
+  align-items: center;
+  padding-bottom: 20px;
+}
+.addon-price {
+  color: var(--primary-800);
+  font-weight: 400;
+}
+.service > span {
+  color: #000;
+  font-weight: bold;
+}
+.total {
+  transform: translateY(-20px);
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+}
+.step--four-info .buttons {
+  transform: translateY(40px);
+}
+.step--five-info {
+  max-width: 450px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.step--five-info .info-title {
+  color: var(--primary-800);
+}
+.step--five-info img {
+  width: 70px;
+  margin-bottom: 30px;
+}
+.step--two-info,
+.step--three-info,
+.step--four-info,
+.step--five-info {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-width: 100%;
+    padding: 0;
+    border-radius: 0;
+    min-height: 100vh;
+    background-color: var(--neutral-200);
+  }
+  .steps {
+    flex-direction: row;
+    justify-content: center;
+    background-position-y: 86%;
+    align-items: flex-start;
+    min-height: 0;
+    max-height: 200px;
+    border-radius: 0px;
+  }
+  .step-info {
+    display: none;
+  }
+  .info {
+    margin: 0 auto;
+    box-shadow: -1px 9px 25px 0px #e1e0e0;
+  }
+  .step--one-info,
+  .step--two-info,
+  .step--three-info,
+  .step--four-info,
+  .step--five-info {
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    transform: translateY(-200px);
+    background-color: var(--white);
+    padding: 20px;
+  }
+  .step--four-info .buttons {
+    transform: translateY(0px);
+  }
+  .index {
+    font-size: initial;
+    width: 40px;
+    height: 40px;
+  }
+  .buttons {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 130px);
+    background-color: var(--white);
+    padding: 20px;
+    width: 100%;
+  }
+  .buttons .next {
+    margin: 0 0 0 auto;
+  }
+  .step--one-info,
+  .step--two-info,
+  .step--three-info,
+  .step--four-info {
+    width: 90%;
+  }
+  .plans,
+  .plan {
+    flex-direction: column;
+  }
+  .plans .plan label {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .step--two-info {
+    justify-content: space-around;
+    margin-top: 125px;
+  }
+  .step--two-info .plans .plan {
+    display: flex;
+    min-height: auto;
+  }
+  .step--three-info {
+    margin-top: 125px;
+  }
+  .addon {
+    width: 100%;
+    padding: 15px 20px;
+  }
+  .addon h3 {
+    font-size: 14px;
+  }
+  .addon p {
+    font-size: 12px;
+  }
+  .addon input {
+    width: 25px;
+  }
+  .step--five-info .info-desc {
+    margin: 0 30px;
+  }
+}
