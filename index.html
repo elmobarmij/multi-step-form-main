@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="info">
-        <div class="info-step step--one-info evenly">
+        <div class="info-step step--one-info">
           <!-- Step 1 start -->
           <div>
             <h2 class="info-title">Personal info</h2>
@@ -62,36 +62,35 @@
               Please provide your name, email address, and phone number.
             </p>
           </div>
-          <div class="name">
-            <h3 class="input-title">Name</h3>
-            <input
-              required
-              type="text"
-              name="title"
-              placeholder="e.g. Stephen King"
-            />
-          </div>
-          <div class="email">
-            <h3 class="input-title">Email Address</h3>
-            <input
-              required
-              type="email"
-              name="title"
-              placeholder="e.g. Stephenking@lorem.com"
-            />
-          </div>
-          <div class="number">
-            <h3 class="input-title">Phone Number</h3>
-            <input
-              required
-              type="number"
-              name="title"
-              placeholder=" e.g. +1 234 567 890"
-            />
-          </div>
-          <div class="buttons">
-            <button class="next">Next Step</button>
-          </div>
+          <form>
+            <div class="name">
+              <h3 class="input-title">Name</h3>
+              <input
+                required
+                type="text"
+                name="title"
+                placeholder="e.g. Stephen King"
+              />
+            </div>
+            <div class="email">
+              <h3 class="input-title">Email Address</h3>
+              <input
+                required
+                type="email"
+                name="title"
+                placeholder="e.g. Stephenking@lorem.com"
+              />
+            </div>
+            <div class="number">
+              <h3 class="input-title">Phone Number</h3>
+              <input
+                required
+                type="number"
+                name="title"
+                placeholder=" e.g. +1 234 567 890"
+              />
+            </div>
+          </form>
         </div>
         <!-- Step 1 end -->
 
@@ -144,10 +143,6 @@
             <label for="plan"></label>
             <h5 class="yearly">Yearly</h5>
           </div>
-          <div class="buttons flex-between">
-            <button class="back">Go Back</button>
-            <button class="next">Next Step</button>
-          </div>
         </div>
         <!-- Step 2 end -->
 
@@ -187,11 +182,6 @@
               </div>
               <span class="price">+$<span class="final-price">2</span>/mo</span>
             </label>
-          </div>
-
-          <div class="btn buttons flex-between">
-            <button class="back">Go Back</button>
-            <button class="next">Next Step</button>
           </div>
         </div>
         <!-- Step 3 end -->
@@ -233,13 +223,8 @@
           <div class="total flex-between">
             <span class="total-title">Total (per month)</span>
           </div>
-          <div class="buttons flex-between">
-            <button class="back">Go Back</button>
-            <button class="next confirm">Confirm</button>
-          </div>
+          <!-- Step 4 end -->
         </div>
-        <!-- Step 4 end -->
-
         <!-- Step 5 start -->
         <div class="info-step step--five-info flex-between">
           <img src="./assets/images/icon-thank-you.svg" alt="Thank You!" />
@@ -250,7 +235,22 @@
             at support@loremgaming.com.
           </p>
         </div>
-        <!-- Step 5 end -->
+      </div>
+      <!-- Step 5 end -->
+      <div class="buttons flex-between">
+        <button class="next">Next Step</button>
+      </div>
+      <div class="buttons flex-between">
+        <button class="back">Go Back</button>
+        <button class="next">Next Step</button>
+      </div>
+      <div class="buttons fix flex-between">
+        <button class="back">Go Back</button>
+        <button class="next">Next Step</button>
+      </div>
+      <div class="buttons fix flex-between">
+        <button class="back">Go Back</button>
+        <button class="next confirm">Confirm</button>
       </div>
     </div>
     <script src="main.js"></script>

@@ -1,7 +1,9 @@
 // Users should be able to:
 // - View the optimal layout for the interface depending on their device's screen size
 
-const nextButtons = document.querySelectorAll(".info .next");
+const allButtons = document.querySelectorAll(".buttons");
+const confirmBtn = document.querySelector(".confirm");
+const nextButtons = document.querySelectorAll(".next");
 const infoDivs = document.querySelectorAll(".info-step");
 const steps = document.querySelectorAll(".step .index");
 const backButtons = document.querySelectorAll(".back");
@@ -49,8 +51,6 @@ const buttons = function () {
   //1
   nextButtons.forEach((btn, i) =>
     btn.addEventListener("click", function () {
-      if (!btn) return;
-
       // Form Validation
       if (
         inputs[0].value != "" &&
@@ -61,57 +61,60 @@ const buttons = function () {
         numberInp.classList.remove("invalid");
         emailInp.classList.remove("invalid");
       }
-
       if (inputs[0].value == "") {
         nameInp.classList.add("invalid");
         return;
       } else {
         nameInp.classList.remove("invalid");
       }
-
       if (inputs[1].value == "") {
         emailInp.classList.add("invalid");
         return;
       } else {
         emailInp.classList.remove("invalid");
       }
-
       if (inputs[2].value == "") {
         numberInp.classList.add("invalid");
         return;
       } else {
         numberInp.classList.remove("invalid");
       }
-
       infoDivs[i].style.display = "none";
       infoDivs[i + 1].style.display = "flex";
       steps.forEach((st) => {
         st.classList.remove("active");
       });
-
       if (!steps[steps[i].innerHTML]) {
         steps[3].classList.add("active");
         return;
       }
-
       steps[steps[i].innerHTML].classList.add("active");
+      allButtons[i].style.display = "none";
+      allButtons[i + 1].style.display = "flex";
+      confirmBtn.addEventListener("click", function () {
+        allButtons[i + 1].style.display = "none";
+      });
     })
   );
 
   //2
   backButtons.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
+    btn.onclick = () => {
       steps[i].click();
+      allButtons[i].style.display = "flex";
+      allButtons[i + 1].style.display = "none";
       if (document.querySelector(".total-price") != null) {
         document.querySelector(".total-price").remove();
       }
-    });
+    };
   });
 
   //3
   changeButton.onclick = () => {
     document.querySelector(".total-price").remove();
     steps[1].click();
+    allButtons[3].style.display = "none";
+    allButtons[1].style.display = "flex";
   };
 };
 
