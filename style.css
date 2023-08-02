@@ -463,7 +463,6 @@ hr {
   .steps {
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
     background-position-y: 83%;
     height: 200px;
   }
@@ -471,9 +470,10 @@ hr {
     display: none;
   }
   .info {
-    box-shadow: -1px 9px 25px 0px #e1e0e0;
     flex: 1;
+    margin-bottom: 50px;
     transform: translateY(-50px);
+    box-shadow: -1px 9px 25px 0px #e1e0e0;
   }
   .step--one-info {
     justify-content: center;
@@ -535,6 +535,8 @@ hr {
     margin: 0 30px;
   }
   .buttons {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     padding: 20px;
     margin: 0;
