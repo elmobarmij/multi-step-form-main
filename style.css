@@ -457,23 +457,26 @@ hr {
     width: 100%;
     padding: 0;
     border-radius: 0;
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--neutral-200);
   }
   .steps {
     flex-direction: row;
     justify-content: center;
-    background-position-y: 83%;
-    height: 200px;
+    background-position-y: 80%;
+    border-radius: 0px;
+    min-height: 20%;
   }
   .step-info {
     display: none;
   }
   .info {
-    flex: 1;
-    margin-bottom: 50px;
-    transform: translateY(-50px);
-    box-shadow: -1px 9px 25px 0px #e1e0e0;
+    position: absolute;
+    top: 150px;
+    box-shadow: none;
+  }
+  .info-title {
+    font-size: 24px;
   }
   .step--one-info {
     justify-content: center;
@@ -487,10 +490,10 @@ hr {
   .step--three-info,
   .step--four-info,
   .step--five-info {
+    padding: 30px 20px;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     background-color: var(--white);
-    padding: 20px;
   }
   .index {
     font-size: initial;
@@ -504,7 +507,8 @@ hr {
     width: 90%;
   }
   .step--three-info {
-    transform: translateX(0px);
+    gap: 20px;
+    transform: translateX(2.5%);
   }
   .plans,
   .plan {
@@ -517,6 +521,9 @@ hr {
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
+  }
+  .addons {
+    gap: 15px;
   }
   .addon {
     width: 100%;
@@ -544,5 +551,8 @@ hr {
   }
   .buttons.fix {
     margin: unset;
+  }
+  .total {
+    margin: 50px auto;
   }
 }

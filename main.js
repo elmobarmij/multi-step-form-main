@@ -194,17 +194,17 @@ const insertMonthlyAndYearlyPrices = function () {
     const arcade = `
      <h4>Arcade</h4>
       <p>$<span class="final-price">90</span>/yr</p>
-     <span>2 Months Free</span>
+     <span style="font-size: 14px">2 Months Free</span>
   `;
     const advanced = `
      <h4>Advanced</h4>
       <p>$<span class="final-price">120</span>/yr</p>
-     <span>2 Months Free</span>
+     <span style="font-size: 14px">2 Months Free</span>
   `;
     const pro = `
      <h4>Pro</h4>
       <p>$<span class="final-price">150</span>/yr</p>
-     <span>2 Months Free</span>
+     <span style="font-size: 14px">2 Months Free</span>
   `;
     const arcadeAddons = `+$<span class="final-price">10</span>/yr`;
     const advancedAddons = `+$<span class="final-price">20</span>/yr`;
