@@ -549,12 +549,9 @@ hr {
     margin-top: 15px;
   }
   .buttons {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    margin: auto 0 0 0;
     width: 100%;
     padding: 20px;
-    margin: 0;
     background-color: var(--white);
   }
   .buttons.fix {
