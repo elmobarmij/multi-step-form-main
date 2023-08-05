@@ -456,6 +456,7 @@ hr {
     flex-direction: column;
     width: 100%;
     padding: 0;
+    bottom: 0;
     border-radius: 0;
     height: 100vh;
     background-color: var(--neutral-200);
@@ -554,7 +555,6 @@ hr {
     width: 100%;
     padding: 20px;
     margin: 0;
-    margin-bottom: 15px;
     background-color: var(--white);
   }
   .buttons.fix {
