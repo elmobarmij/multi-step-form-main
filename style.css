@@ -492,6 +492,7 @@ hr {
     justify-content: flex-start;
     height: 500px;
     overflow-y: scroll;
+    margin-bottom: 20px;
   }
   .step--three-info {
     gap: 20px;
@@ -557,6 +558,7 @@ hr {
     width: 100%;
     padding: 20px;
     background-color: var(--white);
+    z-index: 9999;
   }
   .buttons.fix {
     margin: unset;
