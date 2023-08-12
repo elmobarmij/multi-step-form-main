@@ -112,6 +112,7 @@ input[type="number"] {
 .info {
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }
 form {
   display: flex;
@@ -336,6 +337,9 @@ form {
   font-size: 14px;
   margin-left: auto;
 }
+.next.confirm {
+  margin-right: 30px;
+}
 .confirm {
   font-weight: 500;
   background-color: var(--primary-400);
@@ -401,9 +405,6 @@ hr {
 .step--three-info {
   transform: translateX(-5%);
 }
-.buttons.fix {
-  margin: 0 100px 20px;
-}
 .step--five-info {
   max-width: 450px;
   flex-direction: column;
@@ -420,10 +421,17 @@ hr {
 .buttons {
   display: flex;
   justify-content: space-between;
-  margin: 0 80px 20px;
+  position: absolute;
+  right: 14%;
+  bottom: 10%;
+  margin: 0;
 }
-.buttons {
+.buttons:not(:nth-child(2)) {
   display: none;
+  width: 45%;
+}
+.buttons:not(:nth-child(3)) {
+  width: 42%;
 }
 .info + .buttons {
   display: block;
@@ -475,6 +483,7 @@ hr {
     position: absolute;
     top: 17%;
     box-shadow: none;
+    margin-bottom: 10px;
   }
   .info-title {
     font-size: 24px;
@@ -549,10 +558,17 @@ hr {
     margin-top: 15px;
   }
   .buttons {
-    margin: auto 0 0 0;
-    width: 100%;
+    display: block;
+    width: 100% !important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
     padding: 20px;
     background-color: var(--white);
+  }
+  .buttons .confirm {
+    margin-right: 0;
   }
   .buttons.fix {
     margin: unset;
